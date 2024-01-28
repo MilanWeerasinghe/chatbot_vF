@@ -11,9 +11,9 @@ myenv/Scripts/activate
 # install dependences
 pip install openai Flask flask-cors
 
-# create a python file named <constants>
+create a python file named constants
 
-# add myenv and constants to gitignore file
+add myenv and constants to gitignore file
 
-# run the app.py in the terminal
+run the app.py in the terminal
     python app.py
