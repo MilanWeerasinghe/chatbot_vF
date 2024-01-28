@@ -12,6 +12,8 @@ myenv/Scripts/activate
 pip install openai Flask flask-cors
 
 create a python file named constants
+add you api key here
+APIKEY = "your keys" 
 
 add myenv and constants to gitignore file
 
