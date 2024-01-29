@@ -1,0 +1,14 @@
+{
+  "responses": {
+    "greetings": {
+      "hello": "Hello!",
+      "hi": "Hi there!",
+      "hey": "Hey!"
+    },
+    "farewells": {
+      "bye": "Goodbye!",
+      "see you": "See you later!",
+      "farewell": "Farewell!"
+    }
+  }
+}

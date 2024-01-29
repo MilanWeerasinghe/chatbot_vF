@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, jsonify
 # import openai
 import constants
 import os
+import json
 # from openai import OpenAI
 from flask_cors import CORS
 app = Flask(__name__)
@@ -14,17 +15,25 @@ os.environ["OPENAI_API_KEY"] = constants.APIKEY
 
 client = OpenAI()
 
+with open('./mydata/intents.json', 'r') as file:
+    custom_responses = json.load(file)
 
 @app.route("/")
+
 def index():
     return render_template("index.html")
 
 @app.route('/get_chatgpt_response', methods=['POST'])
 def get_chatgpt_response():
     try:
-        user_input = request.json["user_input"]
-
+        user_input = request.json["user_input"].lower()
         print(user_input)
+
+        for category, responses in custom_responses.get("responses", {}).items():
+            if user_input in responses:
+                print(response)
+                return jsonify({'chatgpt_response': custom_responses[category][user_input]})
+    
     # Prompt for GPT-3.5-Turbo, ensuring polite and helpful responses
         prompt = f"User: {user_input}\n\nChatGPT:"
         print(prompt)
@@ -47,6 +56,7 @@ def get_chatgpt_response():
         chatgpt_response = response.model_dump()['choices'][0]['message']['content']
         print(chatgpt_response)
         return jsonify({'chatgpt_response': chatgpt_response})
+    
     except Exception as e:
         return jsonify({'error': str(e)})
     

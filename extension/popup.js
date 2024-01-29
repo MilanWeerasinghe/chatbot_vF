@@ -1,62 +1,3 @@
-class Chatbox {
-    constructor() {
-        this.args = {
-            openButton: document.querySelector('.chatbox__button'),
-            chatBox: document.querySelector('.chatbox__support'),
-            sendButton: document.querySelector('.send__button')
-        }
-
-        this.state = false;
-        this.messages = [];
-    }
-
-    display() {
-        const { openButton, chatBox, sendButton } = this.args;
-
-        openButton.addEventListener('click', () => this.toggleState(chatBox))
-
-        sendButton.addEventListener('click', () => this.onSendButton(chatBox))
-
-        const node = chatBox.querySelector('input');
-
-        node.addEventListener("keyup", ({ key }) => {
-            if (key === "Enter") {
-                this.onSendButton(chatBox)
-            }
-        })
-    }
-
-    toggleState(chatbox) {
-
-
-        this.state = !this.state;
-
-        // show or hides the box
-        if (this.state) {
-            chatbox.classList.add('chatbox--active')
-        } else {
-            chatbox.classList.remove('chatbox--active')
-        }
-    }
-}
-document.getElementById('sendButton').addEventListener('click', function () {
-    moveImage();
-    sendMessage();
-});
-
-function moveImage() {
-    const image = document.getElementById('initialImg');
-    const container2 = document.getElementById('chatbox__image--header');
-    container2.appendChild(image);
-
-}
-function backToOriginalPosition() {
-    const image = document.getElementById('initialImg');
-    const container1 = document.getElementById('centerImg');
-    container1.appendChild(image);
-
-}
-
 document.addEventListener('DOMContentLoaded', function () {
 
     const userInputField = document.getElementById('userInput');
@@ -70,11 +11,36 @@ document.addEventListener('DOMContentLoaded', function () {
         if (userInput) {
             moveImage();
         }
-
         //Enable the button if userInput is not empty, otherwise disable it
         sendButton.disabled = userInput.value ==='';
     });
 });
+
+document.getElementById('sendButton').addEventListener('click', function () {
+    moveImage();
+    sendMessage();
+});
+
+//pass the input when press the ENTER KEY
+document.addEventListener("keyup", ({ key }) => {
+    if (key === "Enter") {
+        sendMessage();
+    }
+});
+
+function moveImage() {
+    const image = document.getElementById('initialImg');
+    const container2 = document.getElementById('chatbox__image--header');
+    container2.appendChild(image);
+    
+}
+// function backToOriginalPosition() {
+//     const image = document.getElementById('initialImg');
+//     const container1 = document.getElementById('centerImg');
+//     container1.appendChild(image);
+
+// }
+
 
 
 // Combine massages 
@@ -132,17 +98,11 @@ function clearInput() {
 function hideIntialMsg() {
     document.getElementById('initialMsg').style.display = 'none';
 }
-// Handle functions when press ENTERKEY
-function handleKeyPress(event) {
-    if (event.keyCode === 13) {
-        sendMessage();
-    }
-}
 
 // Send user massage to API
+
+
 function sendMessage() {
-
-
     const userInput = document.getElementById('userInput').value
     console.log(userInput) //NOT NECESSARY
     appendMessage('User', userInput, 'messages__item--operator');

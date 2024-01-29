@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;1,300&display=swap"rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/doge-sans" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/chat.css">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./assets/css/typing.css">
+    <link rel="stylesheet" href="chat.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="typing.css">
 
     <title>Chatbox</title>
 </head>
@@ -29,7 +29,7 @@
                     <div class="initialMsg" id="initialMsg">
                         <p>Hello! <br> I am <b>Doggy.</b></p>
                         <div id="centerImg">
-                            <img src="./images/header_logo.png"  alt="image" id="initialImg" class="initialImg">
+                            <img src="header_logo.png"  alt="image" id="initialImg" class="initialImg">
                         </div>
                         <p> <br>How can I help <br> you?</p>
                     </div>
@@ -39,16 +39,16 @@
 
                     <input id="userInput" type="text" placeholder="Ask anything..." onkeyup="handleKeyPress(event)">
                     <!-- <button class="send__button">Send</button> -->
-                    <button id="sendButton" disabled><img src="/front-end/images/icons8-send-24.png" alt=""></button>
+                    <button id="sendButton" disabled><img src="icons8-send-24.png" alt=""></button>
                 </div>
             </div>
-            <div class="chatbox__button">
+            <!-- <div class="chatbox__button">
                 <button><img src="./images/icons/chatbox-icon.svg" alt=""></button>
-            </div>
+            </div> -->
         </div>
     </div>
 
-    <script src="/front-end/assets/js/content.js"></script>
+    <script src="popup.js"></script>
 
 
 </body>

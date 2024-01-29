@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Doggy Chat Bot",
+  "version": "1.0",
+  "description": "Chatbot created using openAI",
+  "permissions": ["activeTab", "scripting", "tabs", "storage"],
+  "action": {
+      "default_icon":{ 
+          "16": "header_logo.png",
+          "48":"header_logo.png",
+          "128":"header_logo.png"
+        },
+        "default_popup": "popup.html",
+        "default_title": "Doggy Chatbot"
+    },
+    "icons": {
+        "16": "header_logo.png",
+        "48":"header_logo.png",
+        "128":"header_logo.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://lms.fas.sjp.ac.lk/login/index.php"],
+      "js": ["popup.js"]
+      
+    }
+  ]
+}
