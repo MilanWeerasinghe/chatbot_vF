@@ -1,21 +1,83 @@
-# chatbot_vF
-this chat bot built using the GPT-3.5 turbo and custom data
+# Chatbot with OpenAI, Python Flask, and Custom Data
 
-install python 3.9
-# create a virtual environmet
-python -m venv myenv
+## Overview
 
-# activate virtual env
-myenv/Scripts/activate
+This project aims to create a simple chatbot using OpenAI's GPT-3.5 language model, Python Flask for web development, and custom data for enhancing conversation capabilities. It has a building chrome extension.
 
-# install dependences
-pip install openai Flask flask-cors
+## Prerequisites
 
-create a python file named constants
-add you api key here
-APIKEY = "your keys" 
+- Python 3.9 or higher
+- OpenAI API key (sign up at https://beta.openai.com/signup/ to get one)
+- Flask (`pip install Flask`)
+- OpenAI Python library (`pip install openai`)
+- If your pip is not upgraded, please upgrade it
 
-add myenv and constants to gitignore file
+## Getting Started
 
-run the app.py in the terminal
+1. Clone this repository:
+
+    ```bash
+    git clone https://github.com/your_username/chatbot-with-openai-flask.git
+    cd chatbot-with-openai-flask
+    ```
+
+2. Install dependencies:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3. Set up your OpenAI API key:
+
+    Create a `.env` file in the project root directory and add your OpenAI API key:
+
+    ```env
+    OPENAI_API_KEY=your_api_key_here
+    ```
+   Or create constants.py and add your API key:
+
+    ```env
+    OPENAI_API_KEY=your_api_key_here
+    ```
+    
+## Usage
+
+1. Run the Flask app:
+
+    ```bash
     python app.py
+    ```
+
+2. Open your web browser and navigate to `http://localhost:5000`.
+
+3. Interact with the chatbot by typing messages in the input box.
+
+## Custom Data
+
+To enhance the chatbot's capabilities, you can include custom data by modifying the `custom_data.json` file. Add new conversation examples to improve the chatbot's understanding of specific topics.
+
+```json
+[
+    {
+        "user": "Hello",
+        "bot": "Hi there! How can I assist you today?"
+    },
+    // Add more conversation examples as needed
+]
+```
+
+## OpenAI Configuration
+
+Adjust the OpenAI configuration in the `app.py` file, where you make API calls. You can modify parameters such as the model, temperature, and max tokens to fine-tune the chatbot's responses.
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- OpenAI for providing the GPT-3.5 language model.
+- Flask community for the web framework.
+
+Feel free to customize and extend this project according to your needs!
