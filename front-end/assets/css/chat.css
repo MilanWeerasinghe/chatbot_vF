@@ -6,6 +6,7 @@
     position: absolute;
     bottom: 30px;
     right: 30px;
+   
     
 }
 
@@ -52,6 +53,11 @@
     overflow-y: scroll;
     scroll-behavior: smooth;
     flex-direction: column-reverse;
+}
+.chatbox__messages img{
+    position:fixed;
+    width: 335px;
+    z-index: -1;
 }
 .chatbox__messages::-webkit-scrollbar {
     width: 11px;

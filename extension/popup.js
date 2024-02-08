@@ -2,45 +2,49 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const userInputField = document.getElementById('userInput');
     const sendButton = document.getElementById('sendButton');
-
+    handleInput();
     userInputField.addEventListener('input', function () {
         const userInput = this.value.trim();
-        const initialMsgDiv = document.getElementById('initialMsg');
-        initialMsgDiv.classList.add('hidden');
 
-        if (userInput) {
-            moveImage();
-        }
         //Enable the button if userInput is not empty, otherwise disable it
         sendButton.disabled = userInput.value ==='';
     });
 });
 
 document.getElementById('sendButton').addEventListener('click', function () {
-    moveImage();
+    document.getElementById('userInput').addEventListener('input', function(){
+        let text1 = this.value.trim();
+        if (text1 === "") {
+            return;
+        }
+    });
+    document.getElementById('userInput').addEventListener('input', handleInput);
     sendMessage();
 });
 
+function handleInput() {
+    // Get the input value
+    var userInput = document.getElementById('userInput').value;
+
+    // Get the loading GIF
+    var loadingGif = document.getElementById('initialImg');
+
+    if (userInput.trim() === '') {
+        // If user input is empty, remove the 'hidden' class to show the GIF
+        loadingGif.classList.remove('hidden');
+    } else {
+        // If user input is not empty, add the 'hidden' class to hide the GIF
+        loadingGif.classList.add('hidden');
+        
+    }
+    
+}
 //pass the input when press the ENTER KEY
 document.addEventListener("keyup", ({ key }) => {
     if (key === "Enter") {
         sendMessage();
     }
 });
-
-function moveImage() {
-    const image = document.getElementById('initialImg');
-    const container2 = document.getElementById('chatbox__image--header');
-    container2.appendChild(image);
-    
-}
-// function backToOriginalPosition() {
-//     const image = document.getElementById('initialImg');
-//     const container1 = document.getElementById('centerImg');
-//     container1.appendChild(image);
-
-// }
-
 
 
 // Combine massages 
@@ -73,7 +77,7 @@ async function showTypingDots() {
         dot.className = 'messages__dot';
         typingDiv.appendChild(dot);
     }
-    tempMsg.innerHTML = ("Doggy is typing ...");
+    tempMsg.innerHTML = ("ConVo is typing ...");
     chatContainer.appendChild(typingDiv);
     chatContainer.appendChild(tempMsg);
 }
@@ -91,12 +95,10 @@ function hideTypingDots() {
     }
 }
 
+document.getElementById('userInput').addEventListener('input', handleInput);
 //Clear user input not necessary
 function clearInput() {
     document.getElementById('userInput').value = '';
-}
-function hideIntialMsg() {
-    document.getElementById('initialMsg').style.display = 'none';
 }
 
 // Send user massage to API

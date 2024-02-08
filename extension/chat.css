@@ -2,12 +2,7 @@
 
 /* CHATBOX
 =============== */
-.chatbox {
-    /* position: absolute; */
-    /* bottom: 30px;
-    right: 30px; */
-    
-}
+
 
 /* CONTENT IS CLOSE */
 .chatbox__support {
@@ -65,7 +60,11 @@
     /* border-radius: 6px; */
     
 }
-
+.chatbox__messages img{
+    /* position:relative; */
+    width: 335px;
+    
+}
 .messages__item {
     background: orange;
     max-width: 60.6%;

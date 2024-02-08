@@ -1,0 +1,95 @@
+{
+  "intents": [  
+    {
+      "tag": "discussionForum",
+      "patterns": [
+        "How can I participate in the duicussion forums?",
+        "Discussion Forum",
+        "How to start a discussion?",
+        "Forums"
+      ],
+      "responses": [
+        "You can access the discussion forum through the course page and start participation in ongoing discussions or you can start a new discussion by clicking on the 'Start new Discussion' button."
+        
+      ]
+    },
+    {
+      "tag": "accessing",
+      "patterns": [
+        "I'm having a trouble accessing my course materials. How can I solve it?",
+        "Why I can not access my courses?",
+        "Access courses"
+      ],
+      "responses": [
+        "Please try clearing your browser cache",
+        "Contact lms@gmail.com for technical assistance"
+      ]
+    },
+    {
+      "tag": "enrolling",
+      "patterns": [
+        "How can I enroll to a course?",
+        "Enroll",
+        "Enrolling to a course",
+        "How can I get access to a course?"
+      ],
+      "responses": [
+        "Dash board -> Name of the course -> Click on it -> Click on 'Enroll Me' button. If it requires an enrollment key, please get the key from you lecturer or Enter your course name here",
+        "Course categries -> Subject -> Select your Academic year -> Go to the relevant course -> Enroll OR Enter your course name here"
+      ]
+    },
+    {
+      "tag": "csc317 1.5",
+      "patterns": [
+        "HCI",
+        "Human Computer Interaction", "csc317 1.5"
+      ],
+      "responses": [
+        "URL:https://lms.fas.sjp.ac.lk/enrol/index.php?id=306"
+      ]
+    },
+    {
+      "tag": "csc369 2.0",
+      "patterns": [
+        "ML1",
+        "Machine Learning 1","csc369 2.0"
+      ],
+      "responses": [
+        "URL:https://lms.fas.sjp.ac.lk/course/view.php?id=339"
+      ]
+    },
+    {
+      "tag": "csc375 2.0",
+      "patterns": [
+        "ML2",
+        "Machine Learning 2", "csc375 2.0"
+      ],
+      "responses": [
+        "URL:https://lms.fas.sjp.ac.lk/course/view.php?id=1009"
+      ]
+    },
+    {
+      "tag": "csc355 2.0",
+      "patterns": [
+        "OR",
+        "Operations Research", "csc355 2.0"
+      ],
+      "responses": [
+        "https://lms.fas.sjp.ac.lk/course/view.php?id=1005"
+      ]
+    },
+    {
+      "tag": "submission",
+      "patterns": [
+        "How to submit an assignment through the LMS?",
+        "Assignment submission through LMS",
+        "Assignment submission",
+        "How to do submissions?"
+      ],
+      "responses": [
+        "Login to your LMS Account -> My Courses -> Course Page -> Click on the Assignment submission portal -> Click 'Add Submission' button -> Select Files/ Drag and drop the file in the submission area -> Save Submission"
+        
+      ]
+    }
+  ]
+}

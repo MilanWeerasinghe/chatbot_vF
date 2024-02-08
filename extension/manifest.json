@@ -1,17 +1,17 @@
 {
   "manifest_version": 3,
-  "name": "Doggy Chat Bot",
+  "name": "ConVo",
   "version": "1.0",
-  "description": "Chatbot created using openAI",
+  "description": "ConVo created using openAI",
   "permissions": ["activeTab", "scripting", "tabs", "storage"],
   "action": {
       "default_icon":{ 
-          "16": "header_logo.png",
-          "48":"header_logo.png",
-          "128":"header_logo.png"
+          "16": "header_image.png",
+          "48":"header_image.png",
+          "128":"header_image.png"
         },
         "default_popup": "popup.html",
-        "default_title": "Doggy Chatbot"
+        "default_title": "ConVo"
     },
     "icons": {
         "16": "header_logo.png",
